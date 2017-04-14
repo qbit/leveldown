@@ -80,6 +80,15 @@ typedef std::string string;
   TypeName(const TypeName&);               \
   void operator=(const TypeName&)
 
+#if !1
+// Windows does not have an iovec type, yet the concept is universally useful.
+// It is simple to define it ourselves, so we put it inside our own namespace.
+struct iovec {
+	void* iov_base;
+	size_t iov_len;
+};
+#endif
+
 }  // namespace snappy
 
 #endif  // UTIL_SNAPPY_OPENSOURCE_SNAPPY_STUBS_PUBLIC_H_

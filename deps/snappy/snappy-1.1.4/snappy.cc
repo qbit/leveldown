@@ -42,6 +42,11 @@
 
 namespace snappy {
 
+struct iovec {
+  void* iov_base;
+  size_t iov_len;
+};
+
 using internal::COPY_1_BYTE_OFFSET;
 using internal::COPY_2_BYTE_OFFSET;
 using internal::LITERAL;
